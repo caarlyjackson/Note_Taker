@@ -12,6 +12,10 @@ module.exports = (app) => {
         res.json(notesData);
     });
 
+    app.get('/', (req, res) => {
+        res.json(path.join(__dirname, 'index.html'));
+    });
+
     // API Post Requests
     app.post('/api/notes', (req, res) => {
         if (notesData) {
